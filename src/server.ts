@@ -12,6 +12,9 @@ app.use(routes);
 
 app.use(errors());
 
-app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+app.use((req, res) => {
+    res.status(404).json({error: "Sorry can't find that!"})
+})
 
-app.listen(3333);
+
+app.listen(process.env.PORT || 3333);

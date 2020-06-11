@@ -3,7 +3,7 @@ import knex from './database/connection';
 import multer from 'multer'
 import multerconfig from './config/multer';
 import {celebrate, Joi} from 'celebrate';
-
+import path from 'path';
 import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/ItemsController';
 const pointsController = new PointsController();
@@ -17,6 +17,8 @@ routes.get('/items', itemsController.index);
 routes.get('/points', pointsController.index);
 //Filter by ID and get data
 routes.get('/points/:id', pointsController.show);
+
+routes.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 routes.post('/points', 
 upload.single('image'),
