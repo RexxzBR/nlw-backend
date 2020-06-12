@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+    "dev": "nodemon -x ts-node src/config/server.ts",
     "kseed": "knex --knexfile knexfile.ts seed:run",
     "kmigrate": "knex --knexfile knexfile.ts migrate:latest"
   },
