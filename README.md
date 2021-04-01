@@ -1,2 +1,2 @@
 # nlw-backend
-Backend of NLW using Express
+Backend of Ecoleta using Express
